@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html> 
+<head>
+</head>
+<body>
+<style>
+h1 { 
+  display: block;
+  font-size: 4em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 50%;
+  margin-right: 0;
+  font-weight: bold;
+}
+form{
+  padding-left: 20%;
+ font-size: 3em;
+}
+input{
+    font-size: 0.5em;
+</style>
+<table>
+<tr> 
+<th colspan="5"><h1><B ><I >HANDWRITTEN FORGERY</I></B></h1></th> 
+</tr> 
+</table>
+<form method="POST" class="post-form" enctype="multipart/form-data">
+    Select image to upload:
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Upload Image" name="submit">
+</form>
+<img src='{{ MEDIA_URL }}{{ imagefile }}'>
+</body>
+</html> 
