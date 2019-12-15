@@ -5,15 +5,15 @@ goto the command line and execute the following commands
       pip install django  
 ## MAKE MIGRATIONS:   
 Navigate to the file named forgery which contains the manage.py file  
-      python manage.py makemigrations  
+      python manage.py makemigrations signforgery
 ## MIGRATE    
       python manage.py migrate  
 ## INSERT SIGNATURE IMAGES(TRAINING SET) RELATED TO FORGERY DETECTION INTO THE DATABASE  
       SHELL  
           python manage.py shell  
       EXECUTE IN SHELL  
-          from Signforgery.models import Image   
-          i=Image(name="personname",classified="genuine/forged",image="filename")  
+          from signforgery.models import Image   
+          i=Image(name="personname",classified="genuine/forged",imagefile="filename")  
           i.save()  
 ## RUN SERVER    
       python manage.py runserver  
